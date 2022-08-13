@@ -1,0 +1,130 @@
+import turtle
+
+x=105
+y=x
+z=70
+c=350
+turtle.getscreen()
+t=turtle.getturtle()
+t.lt(45)
+t.penup()
+
+"=============================================================================================================="
+
+#FUNCTION'S SECTION!
+
+#paining function
+def paint(lst,cord):
+    for c in range(0,len(lst)):
+        t.pencolor(lst[c])
+        t.color(lst[c])
+        t.goto(cord[c])
+        t.pendown()
+        t.begin_fill()
+        t.circle(75,steps=4)
+        t.end_fill()
+        t.penup()
+
+#coordinate function
+def cord(y):
+    global c
+    cordinate=[[-c+x*0,c-y],[-c+x*1,c-y],[-c+x*2,c-y],[-c+x*3,c-y],\
+        [-c+x*4,c-y],[-c+x*5,c-y],[-c+x*6,c-y],[-c+x*7,c-y]]
+    return cordinate
+
+"=============================================================================================================="
+
+#HEX-CODE LIST'S SECTION!
+
+#first row hex code list
+lst1=["#dbcc00","#ea729f","#fff301","#ea729f",\
+"#ea729f","#fff301","#ea729f","#fff301"]
+
+#second row hex code list
+lst2=["#dbcc00","#dbcb02","#4e6ef5","#d9cd00"\
+,"#0b01ed","#d9cc01","#a8e71c","#dbcc00"]
+
+#third row hex code list
+lst3=["#ccbd00","#ccbd00","#ccbd00","#ccbd00"\
+,"#ccbd00","#ccbd00","#ccbd00","#ccbd00"]
+
+#forth row hex code list
+lst4=["#020001","#ffffff","#ee9e9f","#ee9e9f"\
+,"#efa9a9","#f0a6a5","#ffffff","#020001"]
+
+#fifth row hex code list
+lst5=["#eb969b","#eda1a3","#ecbabb","#f2c4c6"\
+,"#efc1c3","#efc3c4","#f1b2ad","#eba7a6"]
+
+#sixth row hex code list
+lst6=["#eea39d","#eea39e","#924c4a","#eea2a4"\
+,"#f0aaac","#9c5050","#f1b1af","#f2b1af"]
+
+#seventh row hex code list
+lst7=["#ea9497","#e9979b","#c47f84","#c7848b"\
+,"#d2a19a","#cf8d8e","#efb5b3","#efb2af"]
+
+#eighth row hex code list
+lst8=["#ef9fa0","#eb9d9d","#eda3a2","#efa9a7"\
+,"#efb2ad","#eeaaab","#efaeaa","#f0afab"]
+
+"=============================================================================================================="
+
+#COORDINATE FUNCTION CALL SECTION!
+
+#first row
+cord1=cord(y*0+z)
+
+#second row
+cord2=cord(y*1+z)
+
+#third row
+cord3=cord(y*2+z)
+
+#forth row
+cord4=cord(y*3+z)
+
+#fifth row
+cord5=cord(y*4+z)
+
+#sixth row
+cord6=cord(y*5+z)
+
+#seventh row
+cord7=cord(y*6+z)
+
+#eighth row
+cord8=cord(y*7+z)
+
+"=============================================================================================================="
+
+
+#PAINTING FUNCTION CALL SECTION!
+
+#first row painting
+paint(lst1,cord1)
+
+#second row painting
+paint(lst2,cord2)
+
+#third row painting
+paint(lst3,cord3)
+
+#forth row painting
+paint(lst4,cord4)
+ 
+#fifth row painting
+paint(lst5,cord5)
+ 
+#sixth row painting
+paint(lst6,cord6)
+ 
+#seventh row painting
+paint(lst7,cord7)
+ 
+#eight row painting
+paint(lst8,cord8)
+
+"=============================================================================================================="
+
+turtle.exitonclick()
